@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800;900&family=Archivo+Condensed:wght@400;500;600;750;800;900&family=Archivo+Black&family=Archivo:wght@900&family=JetBrains+Mono:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Coolvetica';
+  src: local('Coolvetica Regular'), local('Coolvetica-Regular'), local('Coolvetica'),
+       url('https://db.onlinewebfonts.com/t/20e2efb76e274b34cc0ad0e54d372e39.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Coolvetica';
+  src: local('Coolvetica Heavy'), local('Coolvetica-Heavy'), local('Coolvetica Heavy Regular'),
+       url('https://db.onlinewebfonts.com/t/8eb8de43b0d268a8dc4e9bf4397779d7.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-bebas: "Bebas Neue", sans-serif;
+  --font-display: "Coolvetica", "Archivo Black", "Helvetica Neue", "Arial Black", Arial, sans-serif;
+  --font-mono: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-brand-blue: #0052FF;
+  --color-brand-bg: #F5F5F3;
+  --color-brand-border: #D1D1CB;
+  --color-brand-dark: #000000;
+  --color-brand-gray-text: #111111;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-brand-bg);
+    color: var(--color-brand-dark);
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    letter-spacing: 0.06em;
+    line-height: 1.05;
+    font-weight: 950;
+  }
+
+  h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: 0.04em;
+    line-height: 1.05;
+    font-weight: 900;
+  }
+
+  /* Robust word-wrapping and boundary control for all texts */
+  p, span, a, button, h1, h2, h3, h4, h5, h6, li, div, label {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+}
+
+@utility font-sans {
+  font-family: var(--font-sans), sans-serif;
+}
+
+@utility font-display {
+  font-family: var(--font-display), sans-serif;
+}
+
+@utility font-bebas {
+  font-family: var(--font-bebas), sans-serif;
+}
+
+@utility font-mono {
+  font-family: var(--font-mono), monospace;
+}
+
+@utility editorial-hero {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 13vw, 11rem);
+  line-height: 1.05;
+  letter-spacing: 0.05em;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@utility animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
